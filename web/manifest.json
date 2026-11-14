@@ -1,0 +1,15 @@
+{
+  "name": "د. أحمد يوسف الغاطس — عيادة الجراحة",
+  "short_name": "د. أحمد",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FAF6F7",
+  "theme_color": "#B3122E",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}
