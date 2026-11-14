@@ -1252,10 +1252,10 @@ function render(){
    لو مفيش نت أو فيه ملف فيه غلط: بيكمّل بآخر نسخة محفوظة، وإلا بالمحتوى اللي جوه التطبيق.
    ========================================================= */
 const SHEETS = {
-  // clinic: "",
-  // faq:    "",
-  // tips:   "",
-  // lists:  ""
+  clinic: "11PQuEYt1zf0fgJ8GOwR77lt0jpaCjoX3xJ66Q7lPfb0",
+  faq:    "1umOg8qcX0-PlvJZqLBegPQ60_UqclVDzBImjBsRP8cg",
+  tips:   "1v3bZomnlJWc_s2_BgtlQK_QhpBZMjEmGyDJNMcJ1Wn8",
+  lists:  "15XjzEutVZbQGRI8NcLe8s-KlFlNNMjGk8E5rn9w4Oog"
 };
 const CKEY = "drahmed_content_v1";
 const sheetUrl = id => "https://docs.google.com/spreadsheets/d/" + id + "/export?format=csv";
@@ -1292,6 +1292,7 @@ const PARSE = {
     if(v.fee!==undefined) o.fee=cut(digits(v.fee),6);
     const p1=phoneOf(v.phone); if(p1) o.phone=p1;
     if(v.phone2!==undefined) o.phone2=phoneOf(v.phone2)||"";
+    if(v.whatsapp!==undefined){ let wa=digits(v.whatsapp); if(wa.startsWith("0")) wa="20"+wa.slice(1); else if(/^1\d{9}$/.test(wa)) wa="20"+wa; o.whatsapp=(wa.length>=11&&wa.length<=15)?wa:""; }
     if(v.map!==undefined) o.map=/^https:\/\//.test(v.map)?cut(v.map,400):"";
     return Object.keys(o).length? o : null;
   },
